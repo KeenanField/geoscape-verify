@@ -1,8 +1,23 @@
 import { Route, Routes } from "react-router"
 
 import { Layout } from "@/components/layout"
-import { PageStub } from "@/components/page-stub"
 import { Home } from "@/pages/home"
+import { GnafVerify } from "@/pages/products/gnaf"
+import { MailpointVerify } from "@/pages/products/mailpoint"
+import { PhoneVerify } from "@/pages/products/phone"
+import { EmailVerify } from "@/pages/products/email"
+import { Onboarding } from "@/pages/industries/onboarding"
+import { Mail } from "@/pages/industries/mail"
+import { Crm } from "@/pages/industries/crm"
+import { Logistics } from "@/pages/industries/logistics"
+import { Government } from "@/pages/industries/government"
+import { Developers } from "@/pages/docs"
+import { Pricing } from "@/pages/pricing"
+import { Trust } from "@/pages/trust"
+import { Contact } from "@/pages/contact"
+import { Customers } from "@/pages/customers"
+import { About } from "@/pages/about"
+import { NotFound } from "@/pages/not-found"
 
 export function App() {
   return (
@@ -10,144 +25,25 @@ export function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
 
-        <Route
-          path="products/gnaf"
-          element={
-            <PageStub
-              title="G-NAF Verify"
-              tagline="Address validation, autocomplete and geocoding, powered by G-NAF®."
-            />
-          }
-        />
-        <Route
-          path="products/mailpoint"
-          element={
-            <PageStub
-              title="MailPoint Verify"
-              tagline="AMAS-certified mail verification and Australia Post discounts."
-            />
-          }
-        />
-        <Route
-          path="products/phone"
-          element={
-            <PageStub
-              title="Phone Verify"
-              tagline="Validate Australian and international mobile and landline numbers."
-            />
-          }
-        />
-        <Route
-          path="products/email"
-          element={
-            <PageStub
-              title="Email Verify"
-              tagline="Syntax, MX, SMTP and risk scoring in one call."
-            />
-          }
-        />
+        <Route path="products/gnaf" element={<GnafVerify />} />
+        <Route path="products/mailpoint" element={<MailpointVerify />} />
+        <Route path="products/phone" element={<PhoneVerify />} />
+        <Route path="products/email" element={<EmailVerify />} />
 
-        <Route
-          path="solutions/onboarding"
-          element={
-            <PageStub
-              title="Onboarding & KYC"
-              tagline="Verify identity-adjacent data at signup."
-            />
-          }
-        />
-        <Route
-          path="solutions/mail"
-          element={
-            <PageStub
-              title="Mail & Billing"
-              tagline="Cut return mail and qualify for AusPost discounts."
-            />
-          }
-        />
-        <Route
-          path="solutions/crm"
-          element={
-            <PageStub
-              title="Marketing & CRM"
-              tagline="Keep databases clean, deliverable and compliant."
-            />
-          }
-        />
-        <Route
-          path="solutions/logistics"
-          element={
-            <PageStub
-              title="Logistics & Field Services"
-              tagline="Geocode to the rooftop, not the street."
-            />
-          }
-        />
-        <Route
-          path="solutions/government"
-          element={
-            <PageStub
-              title="Government & Utilities"
-              tagline="Authoritative data for service delivery."
-            />
-          }
-        />
+        <Route path="industries/onboarding" element={<Onboarding />} />
+        <Route path="industries/mail" element={<Mail />} />
+        <Route path="industries/crm" element={<Crm />} />
+        <Route path="industries/logistics" element={<Logistics />} />
+        <Route path="industries/government" element={<Government />} />
 
-        <Route
-          path="developers"
-          element={
-            <PageStub
-              title="Developers"
-              tagline="Free sandbox, clean REST API, and SDKs for Node, Python, .NET and Java."
-            />
-          }
-        />
-        <Route
-          path="pricing"
-          element={
-            <PageStub
-              title="Pricing"
-              tagline="Tier comparison and bundle calculator."
-            />
-          }
-        />
-        <Route
-          path="trust"
-          element={
-            <PageStub
-              title="Trust"
-              tagline="Security, compliance, data provenance and certifications."
-            />
-          }
-        />
-        <Route
-          path="customers"
-          element={
-            <PageStub
-              title="Customers"
-              tagline="Trusted by government, banks, insurers and utilities."
-            />
-          }
-        />
-        <Route
-          path="about"
-          element={
-            <PageStub
-              title="About"
-              tagline="The Geoscape story — why we make G-NAF, and why that matters."
-            />
-          }
-        />
+        <Route path="docs" element={<Developers />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path="trust" element={<Trust />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="customers" element={<Customers />} />
+        <Route path="about" element={<About />} />
 
-        <Route
-          path="*"
-          element={
-            <PageStub
-              title="Page not found"
-              tagline="The page you're looking for doesn't exist."
-            />
-          }
-        />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

@@ -126,7 +126,7 @@ function Hero() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link to="/trust">Talk to an expert</Link>
+            <Link to="/contact">Talk to an expert</Link>
           </Button>
         </div>
       </div>
@@ -309,7 +309,7 @@ function CtaBand() {
               variant="outline"
               className="border-background/30 bg-transparent text-background hover:bg-background/10 hover:text-background"
             >
-              <Link to="/trust">Talk to an expert</Link>
+              <Link to="/contact">Talk to an expert</Link>
             </Button>
           </div>
         </div>

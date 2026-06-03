@@ -265,7 +265,7 @@ function Integrations() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
           Don&rsquo;t see your platform?{" "}
-          <Link to="/trust" className="text-primary hover:underline">
+          <Link to="/contact" className="text-primary hover:underline">
             Talk to an expert
           </Link>{" "}
           — the REST API and SDKs connect to anything.
@@ -365,7 +365,7 @@ function CtaBand() {
               variant="outline"
               className="border-background/30 bg-transparent text-background hover:bg-background/10 hover:text-background"
             >
-              <Link to="/trust">Talk to an expert</Link>
+              <Link to="/contact">Talk to an expert</Link>
             </Button>
           </div>
         </div>

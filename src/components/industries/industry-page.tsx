@@ -59,7 +59,7 @@ function Hero({ data }: { data: IndustryData }) {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link to="/trust">Talk to an expert</Link>
+            <Link to="/contact">Talk to an expert</Link>
           </Button>
         </div>
 
@@ -297,7 +297,7 @@ function CtaBand({ data }: { data: IndustryData }) {
                 "hover:bg-background/10 hover:text-background"
               )}
             >
-              <Link to="/trust">Talk to an expert</Link>
+              <Link to="/contact">Talk to an expert</Link>
             </Button>
           </div>
         </div>
