@@ -15,7 +15,7 @@ import type { LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 type Step = { n: string; title: string; body: string }
-type Sdk = { name: string; install: string }
+type Integration = { name: string; category: string }
 type Resource = { icon: LucideIcon; name: string; body: string; href: string }
 type Capability = { icon: LucideIcon; title: string; body: string }
 
@@ -37,11 +37,15 @@ const STEPS: Step[] = [
   },
 ]
 
-const SDKS: Sdk[] = [
-  { name: "Node.js", install: "npm i @geoscape/verify" },
-  { name: "Python", install: "pip install geoscape-verify" },
-  { name: ".NET", install: "dotnet add package Geoscape.Verify" },
-  { name: "Java", install: "implementation 'au.geoscape:verify'" },
+const INTEGRATIONS: Integration[] = [
+  { name: "Salesforce", category: "CRM" },
+  { name: "HubSpot", category: "CRM" },
+  { name: "Microsoft Dynamics 365", category: "CRM" },
+  { name: "WordPress", category: "CMS" },
+  { name: "Shopify", category: "E-commerce" },
+  { name: "WooCommerce", category: "E-commerce" },
+  { name: "Zapier", category: "Automation" },
+  { name: "Snowflake", category: "Data" },
 ]
 
 const RESOURCES: Resource[] = [
@@ -234,24 +238,38 @@ function Integrations() {
             Integrations
           </p>
           <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-balance sm:text-4xl">
-            SDKs for the stack you already use.
+            Plugs into the tools you already run.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Pre-built connectors for the major CRMs, content and commerce
+            platforms — verify contact data without writing a line of code.
+          </p>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {SDKS.map((s) => (
+          {INTEGRATIONS.map((i) => (
             <div
-              key={s.name}
-              className="flex flex-col rounded-xl border bg-card p-6"
+              key={i.name}
+              className="flex flex-col gap-3 rounded-xl border bg-card p-6"
             >
-              <h3 className="font-heading text-lg font-medium tracking-tight">
-                {s.name}
-              </h3>
-              <code className="mt-3 block overflow-x-auto rounded-md bg-muted/60 px-3 py-2 font-mono text-[0.7rem] text-muted-foreground">
-                {s.install}
-              </code>
+              <span className="flex size-10 items-center justify-center rounded-lg bg-muted font-heading text-sm font-medium text-muted-foreground">
+                {i.name.slice(0, 2)}
+              </span>
+              <div>
+                <h3 className="font-medium tracking-tight">{i.name}</h3>
+                <p className="mt-0.5 font-mono text-[0.7rem] tracking-wide text-muted-foreground uppercase">
+                  {i.category}
+                </p>
+              </div>
             </div>
           ))}
         </div>
+        <p className="mt-6 text-sm text-muted-foreground">
+          Don&rsquo;t see your platform?{" "}
+          <Link to="/trust" className="text-primary hover:underline">
+            Talk to an expert
+          </Link>{" "}
+          — the REST API and SDKs connect to anything.
+        </p>
       </div>
     </section>
   )
