@@ -13,6 +13,7 @@ import {
 import type { LucideIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { GridBackdrop } from "@/components/ui/grid-backdrop"
 
 type Step = { n: string; title: string; body: string }
 type Integration = { name: string; category: string }
@@ -152,7 +153,7 @@ function CodeSample() {
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
-      <div className="bg-graticule pointer-events-none absolute inset-0" />
+      <GridBackdrop />
       <div className="pointer-events-none absolute -top-24 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-[1fr_1.1fr] lg:items-center">
         <div>
@@ -346,8 +347,9 @@ function Capabilities() {
 function CtaBand() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-      <div className="overflow-hidden rounded-2xl border bg-foreground text-background">
-        <div className="bg-graticule flex flex-col items-center gap-6 px-6 py-14 text-center">
+      <div className="relative overflow-hidden rounded-2xl border bg-foreground text-background">
+        <GridBackdrop tone="dark" />
+        <div className="relative flex flex-col items-center gap-6 px-6 py-14 text-center">
           <h2 className="font-heading text-3xl font-medium tracking-tight text-balance sm:text-4xl">
             Get your sandbox key and start building.
           </h2>

@@ -2,13 +2,14 @@ import { Link } from "react-router"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { GridBackdrop } from "@/components/ui/grid-backdrop"
 import { AddressDemo } from "@/components/home/address-demo"
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
-      <div className="bg-graticule pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute -top-24 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+      <GridBackdrop />
+      <div className="pointer-events-none absolute -top-24 left-1/2 size-160 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
         <div className="reveal" style={{ animationDelay: "0ms" }}>
@@ -39,7 +40,7 @@ export function Hero() {
           style={{ animationDelay: "240ms" }}
         >
           <Button asChild size="lg">
-            <Link to="/docs">
+            <Link to="https://hub.geoscape.com.au/sign-up">
               Start free <ArrowRight className="size-4" />
             </Link>
           </Button>

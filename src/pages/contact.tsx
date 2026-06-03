@@ -4,6 +4,7 @@ import { ArrowRight, Building2, CircleCheck, Mail, MapPin } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { GridBackdrop } from "@/components/ui/grid-backdrop"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -205,7 +206,7 @@ function ContactForm() {
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
-      <div className="bg-graticule pointer-events-none absolute inset-0" />
+      <GridBackdrop />
       <div className="pointer-events-none absolute -top-24 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-12 text-center sm:pt-28">
         <span

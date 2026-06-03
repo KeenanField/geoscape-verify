@@ -3,6 +3,7 @@ import { Check, Minus } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { GridBackdrop } from "@/components/ui/grid-backdrop"
 import {
   Accordion,
   AccordionContent,
@@ -108,7 +109,7 @@ const FAQS = [
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
-      <div className="bg-graticule pointer-events-none absolute inset-0" />
+      <GridBackdrop />
       <div className="pointer-events-none absolute -top-24 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-12 text-center sm:pt-28">
         <h1
@@ -306,8 +307,9 @@ function Faq() {
 function CtaBand() {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-28">
-      <div className="overflow-hidden rounded-2xl border bg-foreground text-background">
-        <div className="bg-graticule flex flex-col items-center gap-6 px-6 py-14 text-center">
+      <div className="relative overflow-hidden rounded-2xl border bg-foreground text-background">
+        <GridBackdrop tone="dark" />
+        <div className="relative flex flex-col items-center gap-6 px-6 py-14 text-center">
           <h2 className="font-heading text-3xl font-medium tracking-tight text-balance sm:text-4xl">
             Make your first verified call in minutes.
           </h2>

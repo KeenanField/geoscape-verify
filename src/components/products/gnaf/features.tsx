@@ -70,7 +70,9 @@ const AutocompleteVisual = (
             key={s}
             className={cn(
               "flex items-center gap-2 rounded-md px-2 py-1.5 font-mono text-[0.7rem]",
-              i === 0 ? "bg-primary/10 text-foreground" : "text-muted-foreground"
+              i === 0
+                ? "bg-primary/10 text-foreground"
+                : "text-muted-foreground"
             )}
           >
             <MapPin className="size-3 text-primary" /> {s}
@@ -93,7 +95,9 @@ const BatchVisual = (
           <span
             className={cn(
               "inline-flex size-3.5 items-center justify-center rounded-full",
-              done ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400" : "bg-muted"
+              done
+                ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"
+                : "bg-muted"
             )}
           >
             {done ? <Check className="size-2.5" /> : null}

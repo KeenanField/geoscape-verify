@@ -21,6 +21,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { navConfig, isMenu, type NavLink } from "@/components/nav-config"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 function DesktopNav({ pathname }: { pathname: string }) {
   return (
@@ -148,6 +149,7 @@ export function SiteNav() {
           <Button asChild className="hidden md:inline-flex">
             <Link to="/developers">Start free</Link>
           </Button>
+          <ThemeToggle />
           <MobileNav pathname={pathname} />
         </div>
       </div>

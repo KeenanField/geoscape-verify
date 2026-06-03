@@ -2,13 +2,14 @@ import { Link } from "react-router"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { GridBackdrop } from "@/components/ui/grid-backdrop"
 
 const COVERAGE = ["AU", "International", "Mobile + landline"]
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
-      <div className="bg-graticule pointer-events-none absolute inset-0" />
+      <GridBackdrop />
       <div className="pointer-events-none absolute -top-24 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">

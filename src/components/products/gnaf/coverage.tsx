@@ -35,7 +35,10 @@ export function Coverage() {
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-background/15 bg-background/15 sm:grid-cols-3">
             {STATS.map((s) => (
-              <div key={s.label} className="flex flex-col gap-3 bg-foreground p-6">
+              <div
+                key={s.label}
+                className="flex flex-col gap-3 bg-foreground p-6"
+              >
                 <span className="inline-flex size-10 items-center justify-center rounded-lg bg-background/10 text-background">
                   <s.icon className="size-5" />
                 </span>
