@@ -47,7 +47,11 @@ const TIERS: Tier[] = [
     name: "Enterprise",
     price: "Let's talk",
     blurb: "Mission-critical, government-grade.",
-    features: ["Custom volume + SLA", "SSO / SCIM, on-prem", "Dedicated manager"],
+    features: [
+      "Custom volume + SLA",
+      "SSO / SCIM, on-prem",
+      "Dedicated manager",
+    ],
     cta: "Contact sales",
     href: "/trust",
   },
@@ -75,7 +79,8 @@ export function PricingCta() {
             key={t.name}
             className={cn(
               "flex flex-col rounded-xl border bg-card p-6",
-              t.featured && "relative border-primary shadow-lg shadow-primary/10"
+              t.featured &&
+                "relative border-primary shadow-lg shadow-primary/10"
             )}
           >
             {t.featured && (
