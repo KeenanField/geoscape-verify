@@ -22,7 +22,8 @@ export const navConfig: NavEntry[] = [
       {
         label: "G-NAF Verify",
         href: "/products/gnaf",
-        description: "Address validation, autocomplete & geocoding from G-NAF®.",
+        description:
+          "Address validation, autocomplete & geocoding from G-NAF®.",
       },
       {
         label: "MailPoint Verify",
@@ -42,38 +43,39 @@ export const navConfig: NavEntry[] = [
     ],
   },
   {
-    label: "Solutions",
+    label: "Industries",
     items: [
       {
         label: "Onboarding & KYC",
-        href: "/solutions/onboarding",
+        href: "/industries/onboarding",
         description: "Verify identity-adjacent data at signup.",
       },
       {
         label: "Mail & Billing",
-        href: "/solutions/mail",
+        href: "/industries/mail",
         description: "Cut return mail and qualify for AusPost discounts.",
       },
       {
         label: "Marketing & CRM",
-        href: "/solutions/crm",
+        href: "/industries/crm",
         description: "Keep databases clean, deliverable and compliant.",
       },
       {
         label: "Logistics & Field Services",
-        href: "/solutions/logistics",
+        href: "/industries/logistics",
         description: "Geocode to the rooftop, not the street.",
       },
       {
         label: "Government & Utilities",
-        href: "/solutions/government",
+        href: "/industries/government",
         description: "Authoritative data for service delivery.",
       },
     ],
   },
-  { label: "Developers", href: "/developers" },
+
+  { label: "Why Geoscape", href: "/trust" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Trust", href: "/trust" },
-  { label: "Customers", href: "/customers" },
-  { label: "About", href: "/about" },
+  { label: "Docs", href: "/docs" },
+  // { label: "Customers", href: "/customers" },
+  // { label: "About", href: "/about" },
 ]
