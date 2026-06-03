@@ -7,7 +7,7 @@ This repository is the marketing site for Geoscape Verify, built with Vite, Reac
 
 ## About the product
 
-Geoscape Verify is verification built by the trusted authours of G-NAF — with phone and email
+Geoscape Verify is verification built by the trusted authors of G-NAF — with phone and email
 validation in the same API.
 
 Bad contact data costs Australian businesses millions every year: failed
@@ -53,26 +53,36 @@ Powered by G-NAF® · AMAS Certified by Australia Post · ISO 27001 · IRAP asse
 
 ## Site structure
 
-- Home — the above, condensed
-- Products — one page per module (G-NAF Verify, MailPoint Verify, Phone Verify, Email Verify)
-- Solutions — by use case (Onboarding, Mail, CRM, Logistics, Government)
-- Developers — docs, API reference, SDKs, sandbox, status
-- Pricing — tier comparison + bundle calculator
-- Trust — security, compliance, data provenance, certifications
-- Customers — case studies (lead with a government or Big 4 bank logo if you have one)
-- About — the Geoscape story, why we make G-NAF, why that matters
+- Home (`/`) — the above, condensed
+- Products (`/products/{gnaf,mailpoint,phone,email}`) — one page per module
+- Industries (`/industries/{onboarding,mail,crm,logistics,government}`) — by use case
+- Pricing (`/pricing`), Trust (`/trust`), Docs (`/docs`), Contact (`/contact`)
+- Customers (`/customers`) and About (`/about`) — routed but still placeholders, and hidden from the nav
+
+Routes are declared in `src/App.tsx`; the header is generated from `src/components/nav-config.ts`.
+
+## Tech stack
+
+React 19 + Vite 8 + TypeScript (strict). Routing via react-router v7, styling via
+Tailwind CSS v4 and shadcn/ui (radix-ui / @base-ui primitives), animation via `motion`.
+It's a fully client-side SPA — no backend, SSR, or API calls (all product demos use
+mocked data).
 
 ## Development
 
 This project uses [bun](https://bun.sh) as the package manager.
 
 ```bash
-bun install      # install dependencies
-bun run dev      # start the Vite dev server
-bun run build    # typecheck + production build
-bun run lint     # lint
-bun run format   # format with Prettier
+bun install        # install dependencies
+bun run dev        # start the Vite dev server
+bun run build      # typecheck (tsc -b) + production build → dist/
+bun run typecheck  # type-check only (faster than a full build)
+bun run lint       # lint
+bun run format     # format with Prettier
+bun run preview    # serve the production build locally
 ```
+
+There is no test runner configured.
 
 ### Adding UI components
 
@@ -87,3 +97,12 @@ Import them via the `@/` path alias:
 ```tsx
 import { Button } from "@/components/ui/button"
 ```
+
+## Deployment
+
+`bun run build` emits a static bundle to `dist/` — host it on any static/CDN target
+(S3 + CloudFront, AWS Amplify, Netlify, etc.).
+
+Because routing uses `BrowserRouter`, **the host must rewrite unknown paths to
+`/index.html` (HTTP 200)** or deep links like `/products/gnaf` will 404 on refresh.
+Configure this as a SPA fallback / redirect rule on whichever host you use.
