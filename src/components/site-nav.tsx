@@ -29,7 +29,19 @@ function DesktopNav({ pathname }: { pathname: string }) {
         {navConfig.map((entry) =>
           isMenu(entry) ? (
             <NavigationMenuItem key={entry.label}>
-              <NavigationMenuTrigger>{entry.label}</NavigationMenuTrigger>
+              <NavigationMenuTrigger
+                onClick={(e) => {
+                  // Hover opens the menu; don't let a click close it again
+                  // (avoids accidentally dismissing the menu you just opened).
+                  // Radix skips its own toggle when the event's default is
+                  // prevented, so the menu only closes on mouse-leave.
+                  if (e.currentTarget.getAttribute("data-state") === "open") {
+                    e.preventDefault()
+                  }
+                }}
+              >
+                {entry.label}
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[22rem] gap-1 p-2">
                   {entry.items.map((item) => (
@@ -130,7 +142,10 @@ export function SiteNav() {
         </Link>
         <DesktopNav pathname={pathname} />
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="hidden md:inline-flex">
+          <Button asChild variant="ghost" className="hidden md:inline-flex">
+            <Link to="/developers">Sign In</Link>
+          </Button>
+          <Button asChild className="hidden md:inline-flex">
             <Link to="/developers">Start free</Link>
           </Button>
           <MobileNav pathname={pathname} />
